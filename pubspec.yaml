@@ -1,7 +1,7 @@
 name: app_store_connect_app_versions
 description: A wrapper for the App Store Connect API. Meant for the `automatic_version_upgrader`.
 homepage: https://github.com/tomassasovsky/app_store_connect_app_versions.dart
-version: 0.1.0
+version: 0.1.0+1
 
 environment:
   sdk: ">=2.17.0 <3.0.0"
