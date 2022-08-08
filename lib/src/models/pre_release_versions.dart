@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:app_store_connect_api/src/models/models.dart';
+import 'package:app_store_connect_app_versions/src/models/models.dart';
 import 'package:pub_semver/pub_semver.dart';
 
 /// {@template app_store_version}

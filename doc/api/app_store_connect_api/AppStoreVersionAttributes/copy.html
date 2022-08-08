@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description"
+    content="API docs for the copy method from the AppStoreVersionAttributes class, for the Dart programming language.">
+  <title>copy method - AppStoreVersionAttributes class - app_store_connect_app_versions library - Dart API</title>
+
+
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+
+</head>
+
+
+<body data-base-href="../../" data-using-base-href="false">
+
+  <div id="overlay-under-drawer"></div>
+
+  <header id="title">
+    <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+    <ol class="breadcrumbs gt-separated dark hidden-xs">
+      <li><a href="../../index.html">app_store_connect_app_versions</a></li>
+      <li><a
+          href="../../app_store_connect_app_versions/app_store_connect_app_versions-library.html">app_store_connect_app_versions</a>
+      </li>
+      <li><a
+          href="../../app_store_connect_app_versions/AppStoreVersionAttributes-class.html">AppStoreVersionAttributes</a>
+      </li>
+      <li class="self-crumb">copy method</li>
+    </ol>
+    <div class="self-name">copy</div>
+    <form class="search navbar-right" role="search">
+      <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead"
+        placeholder="Loading search...">
+    </form>
+  </header>
+
+  <main>
+
+
+    <div id="dartdoc-main-content" class="main-content">
+      <div>
+        <h1><span class="kind-method">copy</span> method
+          <a href="https://dart.dev/null-safety" class="feature feature-null-safety"
+            title="Supports the null safety language feature.">Null safety</a>
+        </h1>
+      </div>
+
+      <section class="multi-line-signature">
+
+
+        <span class="returntype"><a
+            href="../../app_store_connect_app_versions/AppStoreVersionAttributes-class.html">AppStoreVersionAttributes</a></span>
+        <span class="name ">copy</span>(<wbr>
+        <ol class="parameter-list">
+          <li><span class="parameter" id="copy-param-platform">{<span class="type-annotation"><a
+                  href="https://api.dart.dev/stable/2.17.6/dart-core/String-class.html">String</a>?</span> <span
+                class="parameter-name">platform</span>, </span></li>
+          <li><span class="parameter" id="copy-param-versionString"><span class="type-annotation"><a
+                  href="https://api.dart.dev/stable/2.17.6/dart-core/String-class.html">String</a>?</span> <span
+                class="parameter-name">versionString</span>, </span></li>
+          <li><span class="parameter" id="copy-param-appStoreState"><span class="type-annotation"><a
+                  href="https://api.dart.dev/stable/2.17.6/dart-core/String-class.html">String</a>?</span> <span
+                class="parameter-name">appStoreState</span>, </span></li>
+          <li><span class="parameter" id="copy-param-copyright"><span class="type-annotation"><a
+                  href="https://api.dart.dev/stable/2.17.6/dart-core/String-class.html">String</a>?</span> <span
+                class="parameter-name">copyright</span>, </span></li>
+          <li><span class="parameter" id="copy-param-releaseType"><span class="type-annotation"><a
+                  href="../../app_store_connect_app_versions/AppStoreVersionReleaseType.html">AppStoreVersionReleaseType</a>?</span>
+              <span class="parameter-name">releaseType</span>, </span></li>
+          <li><span class="parameter" id="copy-param-earliestReleaseDate"><span class="type-annotation"><a
+                  href="https://api.dart.dev/stable/2.17.6/dart-core/DateTime-class.html">DateTime</a>?</span> <span
+                class="parameter-name">earliestReleaseDate</span>, </span></li>
+          <li><span class="parameter" id="copy-param-downloadable"><span class="type-annotation"><a
+                  href="https://api.dart.dev/stable/2.17.6/dart-core/bool-class.html">bool</a>?</span> <span
+                class="parameter-name">downloadable</span>, </span></li>
+          <li><span class="parameter" id="copy-param-createdDate"><span class="type-annotation"><a
+                  href="https://api.dart.dev/stable/2.17.6/dart-core/DateTime-class.html">DateTime</a>?</span> <span
+                class="parameter-name">createdDate</span>}</span></li>
+        </ol>)
+
+
+
+      </section>
+
+      <section class="desc markdown">
+        <p>Creates a copy of this version overriding the old values
+          if new ones are provided.</p>
+      </section>
+
+
+
+      <section class="summary source-code" id="source">
+        <h2><span>Implementation</span></h2>
+        <pre class="language-dart"><code class="language-dart">AppStoreVersionAttributes copy({
+  String? platform,
+  String? versionString,
+  String? appStoreState,
+  String? copyright,
+  AppStoreVersionReleaseType? releaseType,
+  DateTime? earliestReleaseDate,
+  bool? downloadable,
+  DateTime? createdDate,
+}) {
+  return AppStoreVersionAttributes(
+    platform: platform ?? this.platform,
+    versionString: versionString ?? this.versionString,
+    appStoreState: appStoreState ?? this.appStoreState,
+    copyright: copyright ?? this.copyright,
+    releaseType: releaseType ?? this.releaseType,
+    earliestReleaseDate: earliestReleaseDate ?? this.earliestReleaseDate,
+    downloadable: downloadable ?? this.downloadable,
+    createdDate: createdDate ?? this.createdDate,
+  );
+}</code></pre>
+      </section>
+
+
+    </div> <!-- /.main-content -->
+
+    <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+      <header id="header-search-sidebar" class="hidden-l">
+        <form class="search-sidebar" role="search">
+          <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead"
+            placeholder="Loading search...">
+        </form>
+      </header>
+
+      <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+        <li><a href="../../index.html">app_store_connect_app_versions</a></li>
+        <li><a
+            href="../../app_store_connect_app_versions/app_store_connect_app_versions-library.html">app_store_connect_app_versions</a>
+        </li>
+        <li><a
+            href="../../app_store_connect_app_versions/AppStoreVersionAttributes-class.html">AppStoreVersionAttributes</a>
+        </li>
+        <li class="self-crumb">copy method</li>
+      </ol>
+
+
+      <h5>AppStoreVersionAttributes class</h5>
+      <ol>
+
+        <li class="section-title"><a
+            href="../../app_store_connect_app_versions/AppStoreVersionAttributes-class.html#constructors">Constructors</a>
+        </li>
+        <li><a
+            href="../../app_store_connect_app_versions/AppStoreVersionAttributes/AppStoreVersionAttributes.html">AppStoreVersionAttributes</a>
+        </li>
+        <li><a
+            href="../../app_store_connect_app_versions/AppStoreVersionAttributes/AppStoreVersionAttributes.fromMap.html">fromMap</a>
+        </li>
+
+
+        <li class="section-title">
+          <a
+            href="../../app_store_connect_app_versions/AppStoreVersionAttributes-class.html#instance-properties">Properties</a>
+        </li>
+        <li><a
+            href="../../app_store_connect_app_versions/AppStoreVersionAttributes/appStoreState.html">appStoreState</a>
+        </li>
+        <li><a href="../../app_store_connect_app_versions/AppStoreVersionAttributes/copyright.html">copyright</a></li>
+        <li><a href="../../app_store_connect_app_versions/AppStoreVersionAttributes/createdDate.html">createdDate</a>
+        </li>
+        <li><a href="../../app_store_connect_app_versions/AppStoreVersionAttributes/downloadable.html">downloadable</a>
+        </li>
+        <li><a
+            href="../../app_store_connect_app_versions/AppStoreVersionAttributes/earliestReleaseDate.html">earliestReleaseDate</a>
+        </li>
+        <li class="inherited"><a href="https://api.dart.dev/stable/2.17.6/dart-core/Object/hashCode.html">hashCode</a>
+        </li>
+        <li><a href="../../app_store_connect_app_versions/AppStoreVersionAttributes/platform.html">platform</a></li>
+        <li><a href="../../app_store_connect_app_versions/AppStoreVersionAttributes/releaseType.html">releaseType</a>
+        </li>
+        <li class="inherited"><a
+            href="https://api.dart.dev/stable/2.17.6/dart-core/Object/runtimeType.html">runtimeType</a></li>
+        <li><a
+            href="../../app_store_connect_app_versions/AppStoreVersionAttributes/versionString.html">versionString</a>
+        </li>
+
+        <li class="section-title"><a
+            href="../../app_store_connect_app_versions/AppStoreVersionAttributes-class.html#instance-methods">Methods</a>
+        </li>
+        <li><a href="../../app_store_connect_app_versions/AppStoreVersionAttributes/copy.html">copy</a></li>
+        <li class="inherited"><a
+            href="https://api.dart.dev/stable/2.17.6/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+        <li><a href="../../app_store_connect_app_versions/AppStoreVersionAttributes/toJson.html">toJson</a></li>
+        <li><a href="../../app_store_connect_app_versions/AppStoreVersionAttributes/toMap.html">toMap</a></li>
+        <li class="inherited"><a href="https://api.dart.dev/stable/2.17.6/dart-core/Object/toString.html">toString</a>
+        </li>
+
+        <li class="section-title inherited"><a
+            href="../../app_store_connect_app_versions/AppStoreVersionAttributes-class.html#operators">Operators</a>
+        </li>
+        <li class="inherited"><a
+            href="https://api.dart.dev/stable/2.17.6/dart-core/Object/operator_equals.html">operator ==</a></li>
+
+
+
+
+      </ol>
+
+    </div>
+    <!--/.sidebar-offcanvas-->
+
+    <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    </div>
+    <!--/.sidebar-offcanvas-->
+
+  </main>
+
+  <footer>
+    <span class="no-break">
+      app_store_connect_app_versions
+      0.1.0
+    </span>
+
+
+  </footer>
+
+
+
+  <script src="../../static-assets/highlight.pack.js?v1"></script>
+  <script src="../../static-assets/script.js?v1"></script>
+
+
+
+</body>
+
+</html>

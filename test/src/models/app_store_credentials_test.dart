@@ -1,4 +1,4 @@
-import 'package:app_store_connect_api/app_store_connect_api.dart';
+import 'package:app_store_connect_app_versions/app_store_connect_app_versions.dart';
 import 'package:jose/jose.dart';
 import 'package:test/test.dart';
 

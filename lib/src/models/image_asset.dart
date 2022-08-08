@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:app_store_connect_api/src/models/models.dart';
+import 'package:app_store_connect_app_versions/src/models/models.dart';
 
 /// {@template app_store_version}
 /// An image asset, including its height, width, and template URL.
