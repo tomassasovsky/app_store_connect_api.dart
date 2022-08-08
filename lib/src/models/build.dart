@@ -156,7 +156,9 @@ class AppStoreBuildAttributes extends Serializable {
   }
 }
 
+/// {@template processing_state}
 /// Possible values: PROCESSING, FAILED, INVALID, VALID
+/// {@endtemplate}
 enum ProcessingState {
   /// The app is currently being processed.
   processing('PROCESSING'),
@@ -170,20 +172,22 @@ enum ProcessingState {
   /// The app is valid.
   valid('VALID');
 
-  /// {@macro build_audience_type}
+  /// {@macro processing_state}
   const ProcessingState(this.matcher);
 
   /// The string that matches the value of the processing state.
   final String? matcher;
 
-  /// {@macro build_audience_type}
+  /// {@macro processing_state}
   static ProcessingState fromMatcher(String? matcher) => values.firstWhere(
         (element) => element.matcher == matcher,
         orElse: () => ProcessingState.invalid,
       );
 }
 
-/// Possible values: PROCESSING, FAILED, INVALID, VALID
+/// {@template build_audience_type}
+/// Possible values: INTERNAL_ONLY, APP_STORE_ELEGIBLE
+/// {@endtemplate}
 enum BuildAudienceType {
   /// The build of your app is only available
   /// to members of your development team.

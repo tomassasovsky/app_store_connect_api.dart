@@ -1,5 +1,6 @@
 name: app_store_connect_api
-description: A wrapper for the App Store Connect API.
+description: A wrapper for the App Store Connect API. Meant for the `automatic_version_upgrader`.
+homepage: https://github.com/tomassasovsky/app_store_connect_api.dart
 version: 0.1.0
 
 environment:
@@ -19,3 +20,7 @@ dev_dependencies:
   mocktail: ^0.3.0
   test: ^1.19.2
   very_good_analysis: ^3.0.1
+
+false_secrets:
+  - /test/src/models/app_store_credentials_test.dart
+  - /test/src/app_store_connect_api_test.dart
