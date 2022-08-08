@@ -123,7 +123,12 @@ extension DefaultPreReleaseVersion on AppStorePreReleaseVersionAttributes? {
   /// The version of the app.
   Version get version {
     try {
-      return Version.parse(this!.versionString!);
+      final version = Version.parse(this!.versionString!);
+      if (version.build.isEmpty) {
+        return version.copy(build: '1');
+      }
+
+      return version;
     } catch (e) {
       return Version.none;
     }

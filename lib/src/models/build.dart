@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:math';
 import 'package:app_store_connect_app_versions/src/models/models.dart';
 import 'package:pub_semver/pub_semver.dart';
 
@@ -247,23 +248,23 @@ extension LatestBuildVersion
     on AppStoreGenericResponse<AppStoreVersion, AppStoreBuild> {
   /// The latest version of the app.
   AppStoreVersion get latestVersion {
-    final lastVersion = items.first;
-    final lastVersionAttributes = lastVersion.attributes;
-    final latestVersion = lastVersion.attributes.version;
+    final latestAppStoreVersion = items.first;
+    final latestAppStoreVersionAttributes = latestAppStoreVersion.attributes;
+    final latestVersion = latestAppStoreVersion.attributes.version;
 
-    final latestBuild = included?.first;
+    final latestVersionBuild = latestVersion.build.join();
 
-    final latestBuildNumber = int.tryParse(
-      latestBuild?.attributes?.version ?? latestVersion.build.join(),
-    );
+    final latestAppStoreBuild = included?.first;
+    final latestVersionsBuildNumber = _parseBuildNumber(latestVersionBuild);
+    final latestBuildNumber =
+        _parseBuildNumber(latestAppStoreBuild?.attributes?.version);
 
-    return lastVersion.copy(
-      attributes: lastVersionAttributes?.copy(
-        versionString: latestVersion
-            .copy(
-              build: latestBuildNumber?.toString(),
-            )
-            .toString(),
+    final buildNumber =
+        max(latestVersionsBuildNumber, latestBuildNumber).toString();
+
+    return latestAppStoreVersion.copy(
+      attributes: latestAppStoreVersionAttributes?.copy(
+        versionString: latestVersion.copy(build: buildNumber).toString(),
       ),
     );
   }
@@ -274,21 +275,34 @@ extension LatestPreReleaseBuildVersion
     on AppStoreGenericResponse<AppStorePreReleaseVersion, AppStoreBuild> {
   /// The latest version of the app.
   AppStorePreReleaseVersion get latestVersion {
-    final lastVersion = items.first;
-    final lastVersionAttributes = lastVersion.attributes;
-    final latestVersion = lastVersion.attributes.version;
+    final latestAppStoreVersion = items.first;
+    final latestAppStoreVersionAttributes = latestAppStoreVersion.attributes;
+    final latestVersion = latestAppStoreVersion.attributes.version;
 
-    final latestBuild = included?.first;
+    final latestVersionBuild = latestVersion.build.join();
 
-    final latestBuildNumber = int.tryParse(
-      latestBuild?.attributes?.version ?? latestVersion.build.join(),
-    );
+    final latestAppStoreBuild = included?.first;
+    final latestVersionsBuildNumber = _parseBuildNumber(latestVersionBuild);
+    final latestBuildNumber =
+        _parseBuildNumber(latestAppStoreBuild?.attributes?.version);
 
-    return lastVersion.copy(
-      attributes: lastVersionAttributes?.copy(
-        versionString:
-            latestVersion.copy(build: latestBuildNumber?.toString()).toString(),
+    final buildNumber =
+        max(latestVersionsBuildNumber, latestBuildNumber).toString();
+
+    return latestAppStoreVersion.copy(
+      attributes: latestAppStoreVersionAttributes?.copy(
+        versionString: latestVersion.copy(build: buildNumber).toString(),
       ),
     );
+  }
+}
+
+int _parseBuildNumber(String? build) {
+  if (build == null) return 1;
+
+  try {
+    return int.parse(build.trim());
+  } catch (_) {
+    return 1;
   }
 }
